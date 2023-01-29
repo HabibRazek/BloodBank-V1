@@ -1,0 +1,28 @@
+<div class="container position-absolute top-50 start-50 translate-middle">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Blood Stock</h1>
+      <hr>
+      <div class="row w-50 m-auto">
+      <table class="table table-striped">
+        <thead class="bg-dark text-light">
+          <tr class="text-center">
+            <th scope="col">Blood Group</th>
+            <th scope="col">Quantity (ml)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blood of bloodStock" class="text-center">
+            <td>{{blood.bloodgroup.bloodgroup}}</td>
+            <td>{{blood.quantity}} ml</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,90 @@
+<div style="height:100px ;"></div>
+<div class="container position-absolute bottom-75 start-50 translate-middle-x">
+  <div class="text-dark text-center "><b>Blood Request   </b><img src="assets/request.png" width="50px" height="50px" ></div>
+  <form action="#">
+    <div class="form-row">
+      <div class="input-data">
+        <input type="text" [(ngModel)]="Patient.name" value="{{Patient.name}}" name="{{Patient.name}}" required />
+        <div class="underline"></div>
+        <label for="">Name</label>
+      </div>
+
+      <div class="input-data">
+        <input type="text" [(ngModel)]="Patient.age"  value="{{Patient.age}}" name="{{Patient.age}}" required />
+        <div class="underline"></div>
+        <label for="">Age</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-data">
+        <input
+          type="text"
+          [(ngModel)]="Patient.phone"
+          name="phone"
+          required
+          value="{{Patient.phone}}"
+        />
+        <div class="underline"></div>
+        <label for="">Phone</label>
+      </div>
+      <div class="input-data">
+        <input
+          type="text"
+          [(ngModel)]="Patient.address"
+          name="address"
+          required
+          value="{{Patient.address}}"
+        />
+        <div class="underline"></div>
+        <label for="">Address</label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="input-data">
+        <p>Gender</p>
+        <select
+          [(ngModel)]="Patient.gender"
+          name="gender"
+          class="form-control"
+        >
+          <option value="Male" >Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+      </div>
+      <div class="input-data">
+        <p>Select Blood Group :</p>
+        <select
+          class="form-control form-control"
+          id="idbloodgroup"
+          name="idbloodgroup"
+          [(ngModel)]="idbloodgroup"
+          value="{{idbloodgroup}}"
+        >
+
+          <ng-container *ngFor="let b of BloodGroup" >
+            <option [selected]="true" *ngIf="b.idbloodgroup == Patient.bloodGroup.idbloodgroup" value="{{b.idbloodgroup}}">{{b.bloodgroup}} </option>
+          </ng-container>
+
+
+
+
+
+        </select>
+      </div>
+    </div>
+    <div>
+      <div class="form-row submit-btn">
+        <div class="input-data">
+          <div class="inner"></div>
+          <input
+            type="submit"
+            value="send"
+            (click)="addBloodRequest()"
+            class="btn btn-danger"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,79 @@
+<div div class="container">
+  <div>
+    <h2>Add Donor:</h2>
+  </div>
+  <form>
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>ID Donor :</label>
+      <input
+        type="text"
+        [(ngModel)]="newDonor.iddonor"
+        name="iddonor"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>Name :</label>
+      <input
+        type="text"
+        [(ngModel)]="newDonor.name"
+        name="name"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>Age :</label>
+      <input
+        type="text"
+        [(ngModel)]="newDonor.age"
+        name="age"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>Gender :</label>
+      <select [(ngModel)]="newDonor.gender" name="gender" class="form-control">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Blood Group :</label>
+      <select
+        class="form-control form-control"
+        id="idbloodgroup"
+        name="idbloodgroup"
+        [(ngModel)]="idbloodgroup"
+      >
+        <option *ngFor="let b of BloodGroup  "[value]="b.idbloodgroup-1">
+          {{ b.bloodgroup }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>Phone :</label>
+      <input
+        type="text"
+        [(ngModel)]="newDonor.phone"
+        name="phone"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-2">
+      <label>Address :</label>
+      <input
+        type="text"
+        [(ngModel)]="newDonor.address"
+        name="address"
+        class="form-control"
+      />
+    </div>
+    <div class="mt-2">
+      <button type="submit" (click)="addDonor()" class="btn btn-danger" [routerLink]="['/view-donor/']">
+        ADD
+      </button>
+    </div>
+  </form>
+</div>

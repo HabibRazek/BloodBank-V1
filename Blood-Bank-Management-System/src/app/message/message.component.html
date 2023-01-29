@@ -1,0 +1,14 @@
+  <div class="card text-center mb-3 col-sm-4">
+    <div class="card-body">
+      <img src="assets/y.png" class="card-img-top"  style="width: 45px; height: 45px;">
+      <h5 class="card-title">Message</h5>
+      <div style="height: 45px;"></div>
+      <div *ngFor="let msg of messages">
+        <p class="card-text">{{msg.subject}}</p>
+        <p class="card-text">{{msg.message}}</p>
+      <b class="card-text">
+      </b>
+    </div>
+  </div>
+
+
